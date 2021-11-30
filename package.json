@@ -1,0 +1,18 @@
+{
+  "name": "platform-utilities",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "author": "Thanga Vignesh Raja",
+    "email": "vignesht@boodskap.io"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "async": "^3.2.2",
+    "request": "^2.88.2"
+  }
+}
