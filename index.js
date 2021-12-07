@@ -13,6 +13,7 @@ var domainKey = args[4];
 var apiKey = args[5];
 var path = args[6];
 
+console.log("For developer documentation: https://developer.boodskap.io")
 if(!apiUrl){
     utils.log("API URL argument is mandatory!")
     return;
