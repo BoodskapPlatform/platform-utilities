@@ -71,7 +71,7 @@ else if(funcType && funcType.toLowerCase() === 'populate'){
     }
 
     if(iType.toLowerCase() === 'message') {
-        utils.log("Fetching populate process started...")
+        utils.log("Populate process started...")
         let populate = new Populate(args);
         if(protocol && protocol.toLowerCase() === 'mqtt'){
             utils.log("MQTT Push not implemented!")
@@ -81,7 +81,7 @@ else if(funcType && funcType.toLowerCase() === 'populate'){
 
     }
     if(iType.toLowerCase() === 'record') {
-        utils.log("Fetching populate process started...")
+        utils.log("Populate process started...")
         let populate = new Populate(args);
         populate.populateRecord();
     }

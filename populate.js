@@ -24,6 +24,10 @@ Populate.prototype.populateMessage=function (){
         if(err){
             self.utils.log('Error in reading message definition folder / not found')
         }else{
+            if(files.length == 0){
+                self.utils.log('No files found!')
+                return;
+            }
             async.mapSeries(files,function (file,fdCbk){
 
                 self.utils.log("Process =>"+self.path+"/"+file)
@@ -71,6 +75,10 @@ Populate.prototype.populateRecord=function (){
         if(err){
             self.utils.log('Error in reading record definition folder / not found')
         }else{
+            if(files.length == 0){
+                self.utils.log('No files found!')
+                return;
+            }
             async.mapSeries(files,function (file,fdCbk){
 
                 self.utils.log("Process =>"+self.path+"/"+file)
