@@ -6,6 +6,11 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "https://github.com/BoodskapPlatform/platform-utilities",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BoodskapPlatform/platform-utilities"
+  },
   "author": {
     "author": "Thanga Vignesh Raja",
     "email": "vignesht@boodskap.io"
