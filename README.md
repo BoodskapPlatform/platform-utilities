@@ -23,7 +23,7 @@ Once the repository has been cloned:
 > npm start INFO <API_URL> <DOMAIN_KEY> <API_KEY>
 ```
 
-####Example
+#### Example
 ```shell
 > npm start INFO https://xxxxxx/api XXXXXXXX xxxxxxx
 ```
@@ -34,13 +34,13 @@ Once the repository has been cloned:
 > npm start EXPORT <API_URL> <DOMAIN_KEY> <API_KEY> <EXPORT_PATH>
 ```
 
-######Mandatory arguments, <br>
+###### Mandatory arguments, <br>
 API_URL<br>
 DOMAIN_KEY<br>
 API_KEY<br>
 EXPORT_PATH<br>
 
-####Example
+#### Example
 ```shell
 > npm start EXPORT https://xxxxxxx/api XXXXXXXX xxxxxxxx /export
 ```
@@ -51,13 +51,13 @@ EXPORT_PATH<br>
 > npm start IMPORT <API_URL> <DOMAIN_KEY> <API_KEY> <IMPORT_PATH>
 ```
 
-######Mandatory arguments, <br>
+###### Mandatory arguments, <br>
 API_URL<br>
 DOMAIN_KEY<br>
 API_KEY<br>
 IMPORT_PATH<br>
 
-####Example
+#### Example
 ```shell
 > npm start IMPORT https://xxxxxxx/api XXXXXXXX xxxxxxx /import
 ```
@@ -68,7 +68,7 @@ IMPORT_PATH<br>
 > npm start POPULATE <API_URL> <DOMAIN_KEY> <API_KEY> <DATA_PATH> <TYPE> <PROTOCOL>
 ```
 
-######Mandatory arguments, <br>
+###### Mandatory arguments, <br>
 API_URL<br>
 DOMAIN_KEY<br>
 API_KEY<br>
@@ -77,7 +77,7 @@ TYPE (MESSAGE/RECORD)<br>
 
 if TYPE (MESSAGE) then next parameter will the PROTOCOL (HTTP/MQTT) in default HTTP will be processes
 
-####Example
+#### Example
 ```shell
 > npm start POPULATE https://xxxxxxx/api XXXXXXXX xxxxxxx /data RECORD
 > npm start POPULATE https://xxxxxxx/api XXXXXXXX xxxxxxx /data MESSAGE
@@ -85,7 +85,7 @@ if TYPE (MESSAGE) then next parameter will the PROTOCOL (HTTP/MQTT) in default H
 > npm start POPULATE https://xxxxxxx/api XXXXXXXX xxxxxxx /data MESSAGE MQTT
 ```
 
-###File Names
+### File Names
 Inside the respective folder (Export, Import & Populate) save the rules in the below file names format,
 ```shell
 Message Definition > messages.json
