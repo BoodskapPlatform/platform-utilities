@@ -17,6 +17,26 @@ Info.prototype.fetch=function (){
     let self = this;
 
     async.series({
+        messageDefinition:function (mdCbk) {
+            self.api.messageDefList(function (status,result){
+                if(status && result.length>0){
+                    self.utils.log(result.length+" message definition's Found!");
+                }else{
+                    self.utils.log("No message definition found!");
+                }
+                mdCbk(null,null);
+            })
+        },
+        recordDefinition:function (rdCbk) {
+            self.api.recordDefList(function (status,result){
+                if(status && result.length>0){
+                    self.utils.log(result.length+" record definition's Found!");
+                }else{
+                    self.utils.log("No record definition found!");
+                }
+                rdCbk(null,null);
+            })
+        },
         domainRule:function (dCbk){
             self.api.domainRuleList(function (status,result){
                 if(status){

@@ -38,6 +38,7 @@ if(funcType && funcType.toLowerCase() === 'export'){
     if(path) {
         utils.log("Export data process started...")
         let exportData = new Export(args);
+        exportData.export();
     }else{
         utils.log("Export path argument is mandatory!")
         return;

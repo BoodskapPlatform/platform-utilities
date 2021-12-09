@@ -10,6 +10,53 @@ var API = function(args){
 }
 module.exports = API;
 
+API.prototype.messageDefList=function (cbk){
+    let self = this;
+
+    request.get({
+        uri: self.apiUrl+'/mspec/list/'+self.token+"/1000",
+        headers: {'content-type': 'application/json'},
+    }, function (err, res, body) {
+        if(!err) {
+            if (res.statusCode === 200) {
+                cbk(true, JSON.parse(res.body))
+            } else {
+                self.utils.log("Error in fetching message definition")
+                self.utils.log("Error | "+res.body)
+                cbk(false, res.body)
+            }
+        }else{
+            self.utils.log("Error in fetching message definition")
+            self.utils.log("Error | "+err)
+            cbk(false,null)
+        }
+    });
+}
+
+
+API.prototype.recordDefList=function (cbk){
+    let self = this;
+
+    request.get({
+        uri: self.apiUrl+'/storage/spec/list/'+self.token+"/1000",
+        headers: {'content-type': 'application/json'},
+    }, function (err, res, body) {
+        if(!err) {
+            if (res.statusCode === 200) {
+                cbk(true, JSON.parse(res.body))
+            } else {
+                self.utils.log("Error in fetching record definition")
+                self.utils.log("Error | "+res.body)
+                cbk(false, res.body)
+            }
+        }else{
+            self.utils.log("Error in fetching record definition")
+            self.utils.log("Error | "+err)
+            cbk(false,null)
+        }
+    });
+}
+
 API.prototype.domainRuleList=function (cbk){
     let self = this;
 
