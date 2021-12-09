@@ -28,30 +28,6 @@ Once the repository has been cloned:
 > npm start INFO https://xxxxxx/api XXXXXXXX xxxxxxx
 ```
 
-#### Output
-
-```shell
-> platform-utilities@1.0.0 start
-> node index.js "info" "https://xxxxxxx/api" "XXXXXXXX" "xxxxxxx"
-
-Tue Dec 07 2021 12:43:06 GMT+0530 (India Standard Time) | Fetching info process started...
-Tue Dec 07 2021 12:43:08 GMT+0530 (India Standard Time) | Domain rule Found!
-Tue Dec 07 2021 12:43:08 GMT+0530 (India Standard Time) | 1 message rule's Found!
-Tue Dec 07 2021 12:43:09 GMT+0530 (India Standard Time) | 2 named rule's Found!
-Tue Dec 07 2021 12:43:10 GMT+0530 (India Standard Time) | No named rule found!
-Tue Dec 07 2021 12:43:11 GMT+0530 (India Standard Time) | No binary rule found!
-Tue Dec 07 2021 12:43:12 GMT+0530 (India Standard Time) | 2 job rule's Found!
-Tue Dec 07 2021 12:43:12 GMT+0530 (India Standard Time) | No file rule found!
-Tue Dec 07 2021 12:43:13 GMT+0530 (India Standard Time) | 6 process rule's Found!
-Tue Dec 07 2021 12:43:14 GMT+0530 (India Standard Time) | No sftp rule found!
-Tue Dec 07 2021 12:43:15 GMT+0530 (India Standard Time) | No mqtt rule found!
-Tue Dec 07 2021 12:43:15 GMT+0530 (India Standard Time) | No udp rule found!
-Tue Dec 07 2021 12:43:16 GMT+0530 (India Standard Time) | No tcp rule found!
-Tue Dec 07 2021 12:43:17 GMT+0530 (India Standard Time) | No email rule found!
-Tue Dec 07 2021 12:43:18 GMT+0530 (India Standard Time) | 1 mico api's Found!
-
-```
-
 ### How to export the rules?
 
 ```shell
@@ -62,21 +38,12 @@ Tue Dec 07 2021 12:43:18 GMT+0530 (India Standard Time) | 1 mico api's Found!
 API_URL<br>
 DOMAIN_KEY<br>
 API_KEY<br>
-
-######Optional arguments, <br>
 EXPORT_PATH<br>
 
 ####Example
 ```shell
 > npm start EXPORT https://xxxxxxx/api XXXXXXXX xxxxxxxx /export
 ```
-
-#### Output
-
-```shell
-
-```
-
 
 ### How to import the rules?
 
@@ -88,8 +55,6 @@ EXPORT_PATH<br>
 API_URL<br>
 DOMAIN_KEY<br>
 API_KEY<br>
-
-######Optional arguments, <br>
 IMPORT_PATH<br>
 
 ####Example
@@ -97,8 +62,59 @@ IMPORT_PATH<br>
 > npm start IMPORT https://xxxxxxx/api XXXXXXXX xxxxxxx /import
 ```
 
-#### Output
+### How to populate the data into records?
 
 ```shell
+> npm start POPULATE <API_URL> <DOMAIN_KEY> <API_KEY> <DATA_PATH> <TYPE> <PROTOCOL>
+```
 
+######Mandatory arguments, <br>
+API_URL<br>
+DOMAIN_KEY<br>
+API_KEY<br>
+DATA_PATH<br>
+TYPE (MESSAGE/RECORD)<br>
+
+if TYPE (MESSAGE) then next parameter will the PROTOCOL (HTTP/MQTT) in default HTTP will be processes
+
+####Example
+```shell
+> npm start POPULATE https://xxxxxxx/api XXXXXXXX xxxxxxx /data RECORD
+> npm start POPULATE https://xxxxxxx/api XXXXXXXX xxxxxxx /data MESSAGE
+> npm start POPULATE https://xxxxxxx/api XXXXXXXX xxxxxxx /data MESSAGE HTTP
+> npm start POPULATE https://xxxxxxx/api XXXXXXXX xxxxxxx /data MESSAGE MQTT
+```
+
+###File Names
+Inside the respective folder (Export, Import & Populate) save the rules in the below file names format,
+```shell
+Message Definition > messages.json
+Record Definition > records.json
+Domain Rule > domain_rule.json
+Message Rule > message_rule.json
+Named Rule > named_rule.json
+Schedule Rule > schedule_rule.json
+Binary Rule > binary_rule.json
+Job Rule > job_rule.json
+File Rule > file_rule.json
+Process Rule > process_rule.json
+SFTP Rule > sftp_rule.json
+MQTT Rule > mqtt_rule.json
+TCP Rule > tcp_rule.json
+UDP Rule > udp_rule.json
+Email Rule > email_rule.json
+Micro API Rule > micro_api_rule.json
+
+#To populate the data into records,
+<RECORD_ID>.json
+#example
+1001.json
+1002.json
+
+#To populate the data into messages,
+
+<MESSAGE_ID>.json
+#example
+1001.json
+1002.json
 ```

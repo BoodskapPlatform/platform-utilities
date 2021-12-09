@@ -226,5 +226,7 @@ Info.prototype.fetch=function (){
                 maCbk(null,null);
             })
         },
+    },function (err, results){
+        self.utils.log("*** Process Ended ****")
     })
 }
