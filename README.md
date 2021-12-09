@@ -75,7 +75,7 @@ API_KEY<br>
 DATA_PATH<br>
 TYPE (MESSAGE/RECORD)<br>
 
-if TYPE (MESSAGE) then next parameter will the PROTOCOL (HTTP/MQTT) in default HTTP will be processes
+if TYPE (MESSAGE) then next parameter will the PROTOCOL (HTTP/MQTT) in default HTTP will be processed
 
 #### Example
 ```shell
