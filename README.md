@@ -1,88 +1,112 @@
 # How to run the Platform Utilities?
 
-### Getting Started
-This plugin requires node `>= 6.0.0` and npm `>= 1.4.15` (latest stable is recommended).
-
 ```shell
-> git clone https://github.com/BoodskapPlatform/platform-utilities
+> npm i platform-utilities -g
 ```
 
-Once the repository has been cloned:
+### Boodskap Utils Command
 ```shell
-> cd platform-utilities
+> boodskap <ACTION> <API_URL> <DOMAIN_KEY> <API_KEY> <PATH> <TYPE> <PROTOCOL>
 ```
 
-### NPM Module Installation
+#### ACTION (case in-sensitive)
+INFO (info)<br>
+EXPORT (export) <br>
+IMPORT (import) <br>
+POPULATE (populate)
 
-```shell
-> npm install
-```
+#### API_URL 
+Deployed platform api url
 
-### To print the info
+#### DOMAIN_KEY
+Domain Key
+
+#### API_KEY
+API Key
+
+#### PATH
+Path argument mandatory for export, import & populate
+
+#### TYPE (case in-sensitive)
+
+MESSAGE (message) <br>
+RECORD (record)<br>
+
+###### Note: TYPE is not mandatory for info,export,import & populate
+
+#### PROTOCOL (case in-sensitive)
+
+HTTP (http) <br>
+MQTT (mqtt)<br>
+
+###### Note: PROTOCOL is not mandatory for info,export,import & populate. In default HTTP will be taken
+
+
+### How to print the domain info?
 ```shell
-> npm start INFO <API_URL> <DOMAIN_KEY> <API_KEY>
+> boodskap info <API_URL> <DOMAIN_KEY> <API_KEY>
 ```
 
 #### Example
 ```shell
-> npm start INFO https://xxxxxx/api XXXXXXXX xxxxxxx
+> boodskap info https://xxxxxx/api XXXXXXXX xxxxxxx
 ```
 
-### How to export the rules?
+### How to export the domain rules & schema?
 
 ```shell
-> npm start EXPORT <API_URL> <DOMAIN_KEY> <API_KEY> <EXPORT_PATH>
+> boodskap export <API_URL> <DOMAIN_KEY> <API_KEY> <PATH>
 ```
 
 ###### Mandatory arguments, <br>
 API_URL<br>
 DOMAIN_KEY<br>
 API_KEY<br>
-EXPORT_PATH<br>
+PATH<br>
 
 #### Example
 ```shell
-> npm start EXPORT https://xxxxxxx/api XXXXXXXX xxxxxxxx /export
+> boodskap export https://xxxxxxx/api XXXXXXXX xxxxxxxx /export
 ```
 
-### How to import the rules?
+### How to import the domain rules & schema?
 
 ```shell
-> npm start IMPORT <API_URL> <DOMAIN_KEY> <API_KEY> <IMPORT_PATH>
+> boodskap import <API_URL> <DOMAIN_KEY> <API_KEY> <PATH>
 ```
 
 ###### Mandatory arguments, <br>
 API_URL<br>
 DOMAIN_KEY<br>
 API_KEY<br>
-IMPORT_PATH<br>
+PATH<br>
 
 #### Example
 ```shell
-> npm start IMPORT https://xxxxxxx/api XXXXXXXX xxxxxxx /import
+> boodskap import https://xxxxxxx/api XXXXXXXX xxxxxxx /import
 ```
 
 ### How to populate the data into records?
 
 ```shell
-> npm start POPULATE <API_URL> <DOMAIN_KEY> <API_KEY> <DATA_PATH> <TYPE> <PROTOCOL>
+> boodskap populate <API_URL> <DOMAIN_KEY> <API_KEY> <PATH> <TYPE> <PROTOCOL>
 ```
 
 ###### Mandatory arguments, <br>
 API_URL<br>
 DOMAIN_KEY<br>
 API_KEY<br>
-DATA_PATH<br>
+PATH<br>
 TYPE (MESSAGE/RECORD)<br>
 
-if TYPE (MESSAGE) then next parameter will the PROTOCOL (HTTP/MQTT) in default HTTP will be processed
+if TYPE (MESSAGE) then next parameter will the PROTOCOL (HTTP/MQTT) in default HTTP post will trigger
 
 #### Example
 ```shell
-> npm start POPULATE https://xxxxxxx/api XXXXXXXX xxxxxxx /data RECORD
-> npm start POPULATE https://xxxxxxx/api XXXXXXXX xxxxxxx /data MESSAGE
-> npm start POPULATE https://xxxxxxx/api XXXXXXXX xxxxxxx /data MESSAGE HTTP
-> npm start POPULATE https://xxxxxxx/api XXXXXXXX xxxxxxx /data MESSAGE MQTT
+> boodskap populate https://xxxxxxx/api XXXXXXXX xxxxxxx /data RECORD
+> boodskap populate https://xxxxxxx/api XXXXXXXX xxxxxxx /data MESSAGE
+> boodskap populate https://xxxxxxx/api XXXXXXXX xxxxxxx /data MESSAGE HTTP
+> boodskap populate https://xxxxxxx/api XXXXXXXX xxxxxxx /data MESSAGE MQTT
 ```
 
 ### File Names

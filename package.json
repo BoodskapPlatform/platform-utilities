@@ -1,12 +1,19 @@
 {
   "name": "platform-utilities",
-  "version": "1.0.2",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "1.0.4",
+  "preferGlobal": true,
+  "engines": {
+    "node": ">=10.0.0"
   },
-  "homepage": "https://github.com/BoodskapPlatform/platform-utilities",
+  "main": "index.js",
+  "directories": {
+    "bin": "./bin"
+  },
+  "bin": {
+    "boodskap": "bin/boodskap"
+  },
+  "homepage": "https://developer.boodskap.io",
+  "description": "Boodskap IoT Platform developer utility module to export, import & populate data into the domain",
   "repository": {
     "type": "git",
     "url": "https://github.com/BoodskapPlatform/platform-utilities"
@@ -15,6 +22,17 @@
     "author": "Thanga Vignesh Raja",
     "email": "vignesht@boodskap.io"
   },
+  "keywords": [
+    "cli",
+    "boodskap",
+    "boodskap-utils",
+    "iot-platform",
+    "platform-utils",
+    "boodskap-utility",
+    "iot",
+    "iot-tools",
+    "tools"
+  ],
   "license": "MIT",
   "dependencies": {
     "async": "^3.2.2",
